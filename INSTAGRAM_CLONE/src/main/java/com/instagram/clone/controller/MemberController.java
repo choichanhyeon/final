@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.compiler.ast.Keyword;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ import com.instagram.clone.model.biz.member.MemberBiz;
 import com.instagram.clone.model.vo.MemberJoinProfileVo;
 import com.instagram.clone.model.vo.MemberProfileVo;
 import com.instagram.clone.model.vo.MemberVo;
+import com.instagram.clone.model.vo.SearchProfileVo;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -214,6 +216,17 @@ public class MemberController {
 	public ModelAndView insert() {
 
 		return new ModelAndView("member/profileEdit");
+	}
+	
+	// 검색한 프로필로 이동
+	@GetMapping(value = "/headerSearch")
+	public ModelAndView SearchProfile(Model model, @RequestParam("search") String keyword) {
+		
+		SearchProfileVo profile = biz.SearchProfile(keyword);
+		System.out.println("************"+profile.getMember_id());
+		model.addAttribute("profile", profile);
+		
+		return new ModelAndView("member/searchProfile");
 	}
 
 	// 계정관리(정보: 이미지) 수정처리

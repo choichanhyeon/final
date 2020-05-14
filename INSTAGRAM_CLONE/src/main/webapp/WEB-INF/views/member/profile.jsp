@@ -88,17 +88,13 @@
 						<div class="my-auto mx-1">
 							<button type="button" class="" onclick="location.href='/member/profileEdit'">프로필 편집</button>
 						</div>
-						<div class="my-auto mx-1">수정
-
-							<h3><a href="/member/profileEdit"><i class="fas fa-cog"></i></a></h3>
-						</div>
 					</div>
 					<div class="mb-2">
 						<ul class="navbar-nav list-group-horizontal">
 							<li class="nav-item mr-5">게시물 ?</li>
 							<li class="nav-item mr-5">팔로워 ?</li>
 							<li class="nav-item mr-5">팔로우 ?</li>
-							<li class="nav-item mr-5">성별  ?</li>
+							<li class="nav-item mr-5">성별  : ${sessionLoginMemberProfile.member_gender }</li>
 						</ul>
 					</div>
 					<div class="mb-2">
@@ -106,7 +102,7 @@
 							${sessionLoginMember.member_name }
 						</div>
 						<div>
-							${sessionLoginMemberProfile.member_introduce }
+							자기소개 : ${sessionLoginMemberProfile.member_introduce }
 						</div>
 						<div>
 							<h3><a href="${sessionLoginMemberProfile.member_website }">${sessionLoginMemberProfile.member_website } 웹 사이트</a></h3>

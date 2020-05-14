@@ -92,4 +92,9 @@
             </when>
         </choose>
    </select>
+   
+   <select id="searchProfile" parameterType="String" resultType="SearchProfileVo">
+   	select * from member where member_id =#{keyword}
+   </select>
+   
 </mapper>

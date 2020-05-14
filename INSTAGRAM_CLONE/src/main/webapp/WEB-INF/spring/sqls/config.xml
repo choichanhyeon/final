@@ -9,6 +9,7 @@
 		<typeAlias type="com.instagram.clone.model.vo.MemberJoinProfileSimpleVo" alias="MemberJoinProfileSimpleVo"/>
 		<typeAlias type="com.instagram.clone.model.vo.FeedVo" alias="FeedVo"/>
 		<typeAlias type="com.instagram.clone.model.vo.BoardVo" alias="BoardVo"/>
+		<typeAlias type="com.instagram.clone.model.vo.SearchProfileVo" alias="SearchProfileVo"/>
 	</typeAliases>
 
 

@@ -14,6 +14,7 @@ import com.instagram.clone.model.vo.MemberJoinProfileSimpleVo;
 import com.instagram.clone.model.vo.MemberJoinProfileVo;
 import com.instagram.clone.model.vo.MemberProfileVo;
 import com.instagram.clone.model.vo.MemberVo;
+import com.instagram.clone.model.vo.SearchProfileVo;
 
 @Service
 public class MemberBizImpl implements MemberBiz {
@@ -101,6 +102,11 @@ public class MemberBizImpl implements MemberBiz {
 	@Override
 	public List<MemberJoinProfileSimpleVo> selectMemberList(List<Integer> codeList) {
 		return dao.selectMemberList(codeList);
+	}
+
+	@Override
+	public SearchProfileVo SearchProfile(String keyword) {
+		return dao.SearchProfile(keyword);
 	}
 
 

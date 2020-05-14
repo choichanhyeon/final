@@ -54,49 +54,6 @@
 <script type="text/javascript">
 	
 	</script>
-<script type="text/javascript">
-
-//<![CDATA[
-
-$(function(){
-    $( "#search" ).autocomplete({
-    	source : function(request, response) {
-            $.ajax({
-                  url : "/get/test"
-                , type : "GET"
-                , data : {keyWord : $("#testInput").val()} // 검색 키워드
-                , success : function(data){ // 성공
-                    response(
-                        $.map(data, function(item) {
-                            return {
-                                  label : item.MEMBER_NAME    //목록에 표시되는 값
-                                , value : item.MEMBER_NAME    //선택 시 input창에 표시되는 값
-                                //, idx : item.testIdx    // db 인덱스를 담을수 있음 (예제)
-                          
-                            };
-                        })
-                    );    //response
-                }
-                ,
-                error : function(){ //실패
-                    alert("통신에 실패했습니다.");
-                }
-            });
-        }
-        , minLength : 1    
-        , autoFocus : false    
-        , select : function(evt, ui) {
-            console.log("전체 data: " + JSON.stringify(ui));
-            console.log("db Index : " + ui.item.idx);
-            console.log("검색 데이터 : " + ui.item.value);
-        }
-        , focus : function(evt, ui) {
-            return false;
-        }
-        , close : function(evt) {
-        }
-    });
-</script>
 <!-- END :: JAVASCRIPT -->
 
 </head>
@@ -108,8 +65,8 @@ $(function(){
 				<a class="navbar-brand mr-5" href="/feed/feed"><h3>instagram</h3></a>
 
 				<!-- 검색창 -->
-				<form id="headerSearch" class="form-inline mx-5" action="/feed/feed"
-					method="post">
+				<form id="headerSearch" class="form-inline mx-5" action="/member/headerSearch"
+					method="get">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<span id="headerSearchSubmitButton"

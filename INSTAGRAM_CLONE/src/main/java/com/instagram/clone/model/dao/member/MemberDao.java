@@ -6,6 +6,7 @@ import com.instagram.clone.model.vo.MemberJoinProfileSimpleVo;
 import com.instagram.clone.model.vo.MemberJoinProfileVo;
 import com.instagram.clone.model.vo.MemberProfileVo;
 import com.instagram.clone.model.vo.MemberVo;
+import com.instagram.clone.model.vo.SearchProfileVo;
 
 public interface MemberDao {
 
@@ -34,4 +35,6 @@ public interface MemberDao {
 	public int updateMemberProfile(MemberProfileVo memberProfileVo);
 	
 	public int updateMember(MemberVo memberVo);
+	
+	public SearchProfileVo SearchProfile(String keyword);
 }

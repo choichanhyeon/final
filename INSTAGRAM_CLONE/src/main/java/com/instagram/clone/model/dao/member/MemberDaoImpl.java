@@ -12,6 +12,7 @@ import com.instagram.clone.model.vo.MemberJoinProfileSimpleVo;
 import com.instagram.clone.model.vo.MemberJoinProfileVo;
 import com.instagram.clone.model.vo.MemberProfileVo;
 import com.instagram.clone.model.vo.MemberVo;
+import com.instagram.clone.model.vo.SearchProfileVo;
 
 @Repository
 public class MemberDaoImpl implements MemberDao {
@@ -88,6 +89,13 @@ public class MemberDaoImpl implements MemberDao {
 
 		return sqlSession.selectList(NAMESPACE + "selectMemberList", map);
 	}
+
+	@Override
+	public SearchProfileVo SearchProfile(String keyword) {
+		return sqlSession.selectOne(NAMESPACE + "searchProfile", keyword);
+	}
+
+	
 
 
 }
